@@ -1,0 +1,16 @@
+services:
+  svelte:
+    container_name: gaopt-front
+    tty: true
+    build: .
+    working_dir: /home/workdir
+    volumes:
+      - ./src:/home/workdir
+    networks:
+      - default
+    environment:
+      - TZ=Asia/Tokyov
+
+networks:
+  default:
+    driver: bridge
